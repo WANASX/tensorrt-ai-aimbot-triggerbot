@@ -129,38 +129,6 @@ pip install -r requirements.txt
 
 ---
 
-## Setting Up TensorRT
-
-### Extract the TensorRT ZIP Package:
-1. Right-click the downloaded ZIP → **Extract All...**
-2. Choose a destination (e.g., `C:\TensorRT-10.7`).
-
-### Add TensorRT to Environment Variables:
-1. **Open System Properties** → **Advanced** → **Environment Variables**
-2. Under **System Variables**, select **Path** → **Edit**
-3. Click **New** and add:
-   ```
-   C:\TensorRT-10.7\lib
-   ```
-4. Set `TENSORRT_HOME` Variable:
-   - Click **New** (under System Variables)
-   - **Variable Name:** `TENSORRT_HOME`
-   - **Variable Value:** `C:\TensorRT-10.7`
-
-### Install TensorRT Python Wheel:
-1. Open **Command Prompt** in the extracted TensorRT `python` directory:
-   ```
-   cd C:\TensorRT-10.7\python
-   ```
-2. Install TensorRT:
-   ```
-   pip install tensorrt-10.7.0-cp310-none-win_amd64.whl
-   ```
-   *(Replace the `.whl` filename based on your Python version.)*
-
----
-
-
 ## Usage
 
 ### Control Panel & Overlay:
