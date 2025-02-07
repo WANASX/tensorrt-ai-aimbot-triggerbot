@@ -31,6 +31,8 @@ This release focuses exclusively on **AimBot** and **TriggerBot**, with signific
   - Custom key bindings.
 - **Keyboard & Mouse Handling:** Uses `pynput` to manage key and mouse events.
 - **Mouse Driver Integration:** Uses Logitech-CVE mouse driver (`ghub_mouse.dll`) from [ekknod on GitHub](https://github.com/ekknod/logitech-cve) for precise control.
+
+---
 ![TensorRT AI Aimbot Triggerbot Menu UI](GamerFun_AI_Menu.webp)
 ---
 
@@ -147,8 +149,9 @@ python TensorRT.py
 - Click the **Exit** button in the control panel to safely close the application.
 
 ---
-[![Watch the Demo on Rainbow Six Siege](https://img.youtube.com/vi/YfbQEHXRf6rc/0.jpg)](https://www.youtube.com/watch?v=fbQEHXRf6rc)
+[![Watch the Demo on Rainbow Six Siege](https://img.youtube.com/vi/YfbQEHXRf6rc/0.jpg)](https://www.youtube.com/watch?v=YfbQEHXRf6rc)
 ---
+
 ## Troubleshooting
 
 - **TensorRT/CUDA Issues:** Ensure CUDA and TensorRT are installed correctly and accessible in Python.  
