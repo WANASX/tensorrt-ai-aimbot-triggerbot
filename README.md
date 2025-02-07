@@ -60,6 +60,37 @@ This release focuses exclusively on **AimBot** and **TriggerBot**, with signific
 
 ## Installation
 
+## First Setting Up TensorRT
+
+### Extract the TensorRT ZIP Package:
+1. Right-click the downloaded ZIP → **Extract All...**
+2. Choose a destination (e.g., `C:\TensorRT-10.7`).
+
+### Add TensorRT to Environment Variables:
+1. **Open System Properties** → **Advanced** → **Environment Variables**
+2. Under **System Variables**, select **Path** → **Edit**
+3. Click **New** and add:
+   ```
+   C:\TensorRT-10.7\lib
+   ```
+4. Set `TENSORRT_HOME` Variable:
+   - Click **New** (under System Variables)
+   - **Variable Name:** `TENSORRT_HOME`
+   - **Variable Value:** `C:\TensorRT-10.7`
+
+### Install TensorRT Python Wheel:
+1. Open **Command Prompt** in the extracted TensorRT `python` directory:
+   ```
+   cd C:\TensorRT-10.7\python
+   ```
+2. Install TensorRT:
+   ```
+   pip install tensorrt-10.7.0-cp310-none-win_amd64.whl
+   ```
+   *(Replace the `.whl` filename based on your Python version.)*
+
+---
+
 ### 1️⃣ Clone the Repository:
 ```
 git clone https://github.com/WANASX/tensorrt-ai-aimbot-triggerbot.git
@@ -75,10 +106,26 @@ pip install -r requirements.txt
 - Ensure CUDA Toolkit and TensorRT SDK are installed and properly configured.
 
 ### 4️⃣ Prepare Required Files:
-- Place your **TensorRT engine file** (e.g., `model_fp16_320.trt`) in the project root.
 - Ensure the **mouse_driver** directory contains:
   - `ghub_mouse.dll`
   - `ghub_mouse.py`
+
+## Convert & Run the AI Model
+
+**Note:** A pre-trained model has been uploaded to the repository. You do not need to create your own model. Simply convert the provided model using the following steps:
+
+1. **Open CMD in the Extracted Folder.**
+2. **Convert the AI Model:**  
+   Run the following command to convert the AI model:
+   ```
+   python convert_to_trt.py model1_320.onnx model_fp16_320.trt --fp16
+   ```
+3. **Wait for the process to complete.**
+4. **Launch the Application:**
+   ```
+   python TensorRT.py
+   ```
+5. **Customize settings in the menu and enjoy! 🎯**
 
 ---
 
@@ -113,26 +160,6 @@ pip install -r requirements.txt
 
 ---
 
-## Convert & Run the AI Model
-
-**Note:** A pre-trained model has been uploaded to the repository. You do not need to create your own model. Simply convert the provided model using the following steps:
-
-1. **Extract GamerFun Menu Files:**  
-   If necessary, extract the provided model files from the repository.
-2. **Open CMD in the Extracted Folder.**
-3. **Convert the AI Model:**  
-   Run the following command to convert the AI model:
-   ```
-   python convert_to_trt.py model1_320.onnx model_fp16_320.trt --fp16
-   ```
-4. **Wait for the process to complete.**
-5. **Launch the Application:**
-   ```
-   python TensorRT.py
-   ```
-6. **Customize settings in the menu and enjoy! 🎯**
-
----
 
 ## Usage
 
