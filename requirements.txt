@@ -1,0 +1,8 @@
+opencv-python
+numpy
+mss
+pynput
+pycuda
+tensorrt
+pyautogui
+pillow
