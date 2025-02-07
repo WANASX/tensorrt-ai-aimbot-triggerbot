@@ -150,10 +150,6 @@ python TensorRT.py
 
 ---
 [![Watch the Demo on Rainbow Six Siege](https://img.youtube.com/vi/fbQEHXRf6rc/0.jpg)](https://www.youtube.com/watch?v=fbQEHXRf6rc)
-[![Thumbnail 1](https://img.youtube.com/vi/fbQEHXRf6rc/1.jpg)](https://www.youtube.com/watch?v=fbQEHXRf6rc)
-[![Thumbnail 2](https://img.youtube.com/vi/fbQEHXRf6rc/2.jpg)](https://www.youtube.com/watch?v=fbQEHXRf6rc)
-[![Thumbnail 3](https://img.youtube.com/vi/fbQEHXRf6rc/3.jpg)](https://www.youtube.com/watch?v=fbQEHXRf6rc)
-
 ---
 
 ## Troubleshooting
