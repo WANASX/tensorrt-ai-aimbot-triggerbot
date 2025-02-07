@@ -30,10 +30,12 @@ This release focuses exclusively on **AimBot** and **TriggerBot**, with signific
   - Target area selection (head, neck, chest, legs, etc.).
   - Custom key bindings.
 - **Keyboard & Mouse Handling:** Uses `pynput` to manage key and mouse events.
-- **Mouse Driver Integration:** Uses Logitech-CVE mouse driver (`ghub_mouse.dll`) from [ekknod on GitHub](https://github.com/ekknod/logitech-cve) for precise control.
+- **Mouse Driver Integration:** Uses the Logitech-CVE mouse driver (`ghub_mouse.dll`) from [ekknod on GitHub](https://github.com/ekknod/logitech-cve) for precise control.
 
 ---
+
 ![TensorRT AI Aimbot Triggerbot Menu UI](GamerFun_AI_Menu.webp)
+
 ---
 
 ## Prerequisites
@@ -113,20 +115,22 @@ pip install -r requirements.txt
 
 ## Convert & Run the AI Model
 
-### Extract GamerFun Menu Files:
-1. Open **CMD** in the extracted folder.
-2. Run the following command to convert the AI model:
+**Note:** A pre-trained model has been uploaded to the repository. You do not need to create your own model. Simply convert the provided model using the following steps:
+
+1. **Extract GamerFun Menu Files:**  
+   If necessary, extract the provided model files from the repository.
+2. **Open CMD in the Extracted Folder.**
+3. **Convert the AI Model:**  
+   Run the following command to convert the AI model:
    ```
    python convert_to_trt.py model1_320.onnx model_fp16_320.trt --fp16
    ```
-3. Wait for the process to complete.
-
-### Launch the Application:
-```
-python TensorRT.py
-```
-4. **Customize settings in the menu.**
-5. **Enjoy! 🎯**
+4. **Wait for the process to complete.**
+5. **Launch the Application:**
+   ```
+   python TensorRT.py
+   ```
+6. **Customize settings in the menu and enjoy! 🎯**
 
 ---
 
@@ -149,15 +153,17 @@ python TensorRT.py
 - Click the **Exit** button in the control panel to safely close the application.
 
 ---
+
 ## Watch the Demo on Rainbow Six Siege
 [![Watch the Demo on Rainbow Six Siege](https://img.youtube.com/vi/fbQEHXRf6rc/0.jpg)](https://www.youtube.com/watch?v=fbQEHXRf6rc)
+
 ---
 
 ## Troubleshooting
 
 - **TensorRT/CUDA Issues:** Ensure CUDA and TensorRT are installed correctly and accessible in Python.  
 - **Mouse Driver Errors:** Verify `ghub_mouse.dll` is in `mouse_driver` and compatible with your system.  
-- **Screen Capture Problems:** Check that `mss` is functioning properly and that the capture region is correctly defined.  
+- **Screen Capture Problems:** Check that `mss` is functioning properly and that the capture region is correctly defined.
 
 ---
 
