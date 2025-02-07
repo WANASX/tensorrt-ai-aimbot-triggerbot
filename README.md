@@ -58,8 +58,8 @@ This release focuses exclusively on **AimBot** and **TriggerBot**, with signific
 
 ### 1️⃣ Clone the Repository:
 ```
-git clone https://github.com/YourUsername/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/WANASX/tensorrt-ai-aimbot-triggerbot.git
+cd tensorrt-ai-aimbot-triggerbot
 ```
 
 ### 2️⃣ Install Dependencies:
