@@ -11,9 +11,10 @@ A real-time, AI-powered aimbot and trigger bot leveraging NVIDIA TensorRT for fa
 
 If you're familiar with my previous project featuring YOLO-based AimBot, TriggerBot, and Recoil Control, you can check it out here:
 
-- **Official Website:** [GamerFun](https://www.gamerfun.club/ai-aimbot-triggerbot-shooter-games)
-- **Forum Discussion:** [UnknownCheats](https://www.unknowncheats.me/forum/rainbow-six-siege/671029-gamerfun-ai-menu-mouse-aimbot-triggerbot-recoil-control-using-lgub-drivers.html)
-- **GitHub Repository:** [Your GitHub Repo](https://github.com/YourUsername/your-repo-name)
+- **Official Website:** [GamerFun AI Menu: Undetectable Aimbot, Triggerbot & Safe Recoil Control for Top Shooter Games
+](https://www.gamerfun.club/ai-aimbot-triggerbot-shooter-games)
+- **UnknownCheats Forum:** [[Release] GamerFun AI Menu: All mouse Aimbot, Triggerbot & Recoil Control Using LGUB Drivers](https://www.unknowncheats.me/forum/rainbow-six-siege/671029-gamerfun-ai-menu-mouse-aimbot-triggerbot-recoil-control-using-lgub-drivers.html)
+- **GitHub Repository:** [ai-aimbot-triggerbot](https://github.com/WANASX/ai-aimbot-triggerbot)
 
 This release focuses exclusively on **AimBot** and **TriggerBot**, with significantly improved speed and accuracy.
 
