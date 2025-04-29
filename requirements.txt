@@ -1,8 +1,12 @@
-opencv-python
 numpy
+opencv-python
 mss
 pynput
 pycuda
 tensorrt
 pyautogui
-pillow
+Pillow
+psutil
+# Optional packages for development
+pytest
+black

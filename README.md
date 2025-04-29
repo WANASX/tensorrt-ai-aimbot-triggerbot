@@ -1,184 +1,147 @@
-# AI Aimbot and Trigger Bot
+# TensorRT Aimbot
 
-A real-time, AI-powered aimbot and trigger bot leveraging NVIDIA TensorRT for fast deep learning inference. This tool captures a specific screen region, detects targets using a neural network, and automatically moves the mouse and triggers actions. It includes an overlay and a Tkinter control panel for real-time visual feedback and customizable settings.
+An AI-powered aimbot and triggerbot using TensorRT for high-performance inference, with a modern, modular, and user-friendly design.
 
-> **⚠️ Disclaimer:**  
-> **This software is for educational and experimental purposes only. Use it only where you have explicit permission. Misuse may violate terms of service or laws. The author is not responsible for any consequences.**
+## ⚠️ DISCLAIMER
+
+**This software is provided for EDUCATIONAL PURPOSES ONLY.**
+
+- Using this software in online competitive games is likely against the Terms of Service and may result in your account being banned.
+- This project is intended for research into computer vision and AI, not for cheating in games.
+- The authors take NO RESPONSIBILITY for any consequences resulting from misuse of this software.
 
 ---
 
-## Previous Project & Resources
+   - Official Website [AI Aimbot & Trigger Bot Cheat for Every Shooter Game](https://www.gamerfun.club/ai-aimbot-triggerbot-shooter-games)
+   - Official Forum [AI Aimbot & Trigger Bot Cheat for Every Shooter Game GamerFun Forum](https://forum.gamerfun.club/threads/ai-aimbot-trigger-bot-cheat-for-every-shooter-game.862/)
+   - UnknownCheats Forum [AI Aimbot & Trigger Bot That Outperforms Internal and External Cheats 🔥](https://www.unknowncheats.me/forum/rainbow-six-siege/685011-ai-aimbot-trigger-bot-outperforms-internal-external-cheats.html)
+   - Discord Server [Damascus Discord Server](https://discord.gg/cvVvFrf)
 
-If you're familiar with my previous project featuring YOLO-based AimBot, TriggerBot, and Recoil Control, you can check it out here:
 
-- **Official Website:** [GamerFun](https://www.gamerfun.club/ai-aimbot-triggerbot-shooter-games)
-- **Forum Discussion:** [UnknownCheats](https://www.unknowncheats.me/forum/rainbow-six-siege/671029-gamerfun-ai-menu-mouse-aimbot-triggerbot-recoil-control-using-lgub-drivers.html)
-- **GitHub Repository:** [Your GitHub Repo](https://github.com/YourUsername/your-repo-name)
 
-This release focuses exclusively on **AimBot** and **TriggerBot**, with significantly improved speed and accuracy.
+## 🚀 How to Install & Use
+
+### Step 1: Download & Install Dependencies
+
+1. **TensorRT 10.7 GA for Windows & CUDA 12.x**
+   - Download [NVIDIA TensorRT 10.x](https://developer.nvidia.com/tensorrt/download/10x)
+   - Download and install [CUDA 12.4](https://developer.nvidia.com/cuda-12-4-0-download-archive)
+
+2. **Logitech G HUB (2021-10-8013)**
+   - Download from [Logitech G HUB](https://www.unknowncheats.me/forum/downloads.php?do=file&id=39879)
+   - *Install even if you don't own a Logitech mouse (required for mouse driver)*
+
+3. **Python 3.9+ (64-bit)**
+   - Download and install from [python.org](https://www.python.org/downloads/)
+
+4. **Set Up TensorRT Environment**
+   - Extract the TensorRT ZIP package (e.g., to `C:\TensorRT-10.7`)
+   - Add `C:\TensorRT-10.7\lib` to your system `PATH`
+   - Set `TENSORRT_HOME` environment variable to `C:\TensorRT-10.7`
+   - Install the TensorRT Python wheel:
+     - Open CMD in `C:\TensorRT-10.7\python`
+     - Run: `pip install tensorrt-*.whl` *(choose the .whl matching your Python version)*
+
+### Step 2: Install Python Dependencies
+
+Open CMD in the project folder and run:
+```sh
+pip install opencv-python numpy mss pynput pycuda tensorrt pyautogui pillow
+```
+
+### Step 3: Convert the AI Model to TensorRT
+
+- The ONNX model (`model1_320.onnx`) is already included.
+- Use the provided script to convert it to a TensorRT engine:
+
+```sh
+python convert_to_trt.py model1_320.onnx model_fp16_320.trt --fp16
+```
+- Wait for the process to complete. This will generate `model_fp16_320.trt`.
+
+### Step 4: Run the Aimbot
+
+```sh
+python TensorRT.py
+```
+- The control panel UI will appear. Customize your settings as needed.
+- Hold the configured key (default: ALT) to activate aimbot or triggerbot when a target is detected.
+- Press the panic key (default: END) to instantly disable all functionality.
 
 ---
 
 ## Features
 
-- **AI-Powered Target Detection:** Uses a pre-trained model with TensorRT for high-speed inference.
-- **Real-Time Screen Capture:** Captures specific screen regions using `mss`.
-- **Customizable Overlay:** Displays scanning areas and detected targets via a transparent Tkinter overlay.
-- **Control Panel:** Configure:
-  - Aimbot and trigger bot toggle.
-  - Aimbot speed adjustments.
-  - Target area selection (head, neck, chest, legs, etc.).
-  - Custom key bindings.
-- **Keyboard & Mouse Handling:** Uses `pynput` to manage key and mouse events.
-- **Mouse Driver Integration:** Uses the Logitech-CVE mouse driver (`ghub_mouse.dll`) from [ekknod on GitHub](https://github.com/ekknod/logitech-cve) for precise control.
+- Real-time object detection using TensorRT
+- Fully modular, class-based architecture
+- Advanced aimbot with velocity prediction, smoothing, and adaptive speed
+- Triggerbot with configurable, randomized click/release delays
+- Modern, tabbed, and auto-saving control panel UI (Tkinter + ttk)
+- Overlay UI with advanced bounding box smoothing and velocity prediction
+- All settings configurable via UI and `config.json` (auto-created if missing)
+- Multi-monitor support (select monitor in UI)
+- Panic key (default: END) to instantly disable all functionality
+- Performance monitoring and logging
+- Robust error handling and clean resource cleanup
+- High process priority for optimal performance
 
 ---
 
-![TensorRT AI Aimbot Triggerbot Menu UI](GamerFun_AI_Menu.webp)
+## Project Structure
+
+- `TensorRT.py`: Main application file (modular, all logic in classes)
+- `convert_to_trt.py`: Script to convert ONNX model to TensorRT engine
+- `model1_320.onnx`: Included ONNX model (ready to convert)
+- `mouse_driver/`: Contains mouse control implementation (LogiFck)
+- `config.json`: User configuration file (auto-created/updated)
+- `CHANGELOG.md`: Detailed changelog of all updates
 
 ---
 
-## Prerequisites
+## Configuration
 
-### Hardware & Software Requirements
+Settings are saved in `config.json` and can be edited directly or through the UI. The config file is auto-created with defaults if missing.
 
-- **Operating System:** Windows 10  
-- **GPU:** NVIDIA GPU with CUDA support  
-- **Python:** 3.10+  
-- **NVIDIA Software:** CUDA Toolkit & TensorRT SDK  
-
-> **Important:** TensorRT Python bindings come with the SDK and are not available on PyPI.
-
-### Required Downloads:
-
-- **CUDA 12.4 Toolkit:** [Download Here](https://developer.nvidia.com/cuda-12-4-0-download-archive)
-- **TensorRT 10.7 GA (CUDA 12.0-12.6, Windows):** [Download ZIP](https://developer.nvidia.com/downloads/compute/machine-learning/tensorrt/10.7.0/zip/TensorRT-10.7.0.23.Windows.win10.cuda-12.6.zip)
-- **Logitech G HUB (2021-10-8013)** (Required even if you don’t own a Logitech mouse):  
-  [Download Here](https://www.unknowncheats.me/forum/downloads.php?do=file&id=39879)
-
----
-
-## Installation
-
-## First Setting Up TensorRT
-
-### Extract the TensorRT ZIP Package:
-1. Right-click the downloaded ZIP → **Extract All...**
-2. Choose a destination (e.g., `C:\TensorRT-10.7`).
-
-### Add TensorRT to Environment Variables:
-1. **Open System Properties** → **Advanced** → **Environment Variables**
-2. Under **System Variables**, select **Path** → **Edit**
-3. Click **New** and add:
-   ```
-   C:\TensorRT-10.7\lib
-   ```
-4. Set `TENSORRT_HOME` Variable:
-   - Click **New** (under System Variables)
-   - **Variable Name:** `TENSORRT_HOME`
-   - **Variable Value:** `C:\TensorRT-10.7`
-
-### Install TensorRT Python Wheel:
-1. Open **Command Prompt** in the extracted TensorRT `python` directory:
-   ```
-   cd C:\TensorRT-10.7\python
-   ```
-2. Install TensorRT:
-   ```
-   pip install tensorrt-10.7.0-cp310-none-win_amd64.whl
-   ```
-   *(Replace the `.whl` filename based on your Python version.)*
-
----
-
-### 1️⃣ Clone the Repository:
-```
-git clone https://github.com/WANASX/tensorrt-ai-aimbot-triggerbot.git
-cd tensorrt-ai-aimbot-triggerbot
-```
-
-### 2️⃣ Install Dependencies:
-```
-pip install -r requirements.txt
-```
-
-### 3️⃣ Set Up TensorRT & CUDA:
-- Ensure CUDA Toolkit and TensorRT SDK are installed and properly configured.
-
-### 4️⃣ Prepare Required Files:
-- Ensure the **mouse_driver** directory contains:
-  - `ghub_mouse.dll`
-  - `ghub_mouse.py`
-
-## Convert & Run the AI Model
-
-**Note:** A pre-trained model has been uploaded to the repository. You do not need to create your own model. Simply convert the provided model using the following steps:
-
-1. **Open CMD in the Extracted Folder.**
-2. **Convert the AI Model:**  
-   Run the following command to convert the AI model:
-   ```
-   python convert_to_trt.py model1_320.onnx model_fp16_320.trt --fp16
-   ```
-3. **Wait for the process to complete.**
-4. **Launch the Application:**
-   ```
-   python TensorRT.py
-   ```
-5. **Customize settings in the menu and enjoy! 🎯**
-
----
-
-## Usage
-
-### Control Panel & Overlay:
-- The overlay displays scanning areas and detected targets.
-- The control panel allows you to:
-  - Enable/disable aimbot and trigger bot.
-  - Adjust aimbot speed.
-  - Select target areas (head, neck, chest, legs, etc.).
-  - Configure key bindings (default: **Alt** for aimbot, **X** for trigger bot).
-
-### Operation:
-- **Aimbot:** Moves the mouse toward detected targets.
-- **Trigger Bot:** Simulates mouse clicks when a target is detected.
-- **Key Bindings:** Can be customized via the control panel.
-
-### Exit:
-- Click the **Exit** button in the control panel to safely close the application.
-
----
-
-## Watch the Demo on Rainbow Six Siege
-[![Watch the Demo on Rainbow Six Siege](https://img.youtube.com/vi/fbQEHXRf6rc/0.jpg)](https://www.youtube.com/watch?v=fbQEHXRf6rc)
+Key settings include:
+- `aimbot.enabled`: Enable aimbot functionality
+- `aimbot.key`: Key to hold for activating aimbot
+- `aimbot.speed`: Movement speed (1-1000)
+- `aimbot.target_choice`: Target aim point (head, neck, chest, etc.)
+- `aimbot.smoothing_factor`: Smoothing for aimbot and UI
+- `aimbot.prediction_time`: Prediction time for velocity-based aiming
+- `aimbot.panic_key`: Key to instantly disable all features
+- `triggerbot.enabled`: Enable triggerbot functionality
+- `triggerbot.key`: Key to hold for triggerbot
+- `triggerbot.min_click_delay`/`max_click_delay`: Randomized click duration
+- `triggerbot.min_release_delay`/`max_release_delay`: Randomized release duration
+- `display.boxes_enabled`: Show bounding boxes
+- `display.scanning_box_enabled`: Show scanning box
+- `display.input_width`/`input_height`: Input resolution
+- `system.monitor_index`: Monitor selection
 
 ---
 
 ## Troubleshooting
 
-- **TensorRT/CUDA Issues:** Ensure CUDA and TensorRT are installed correctly and accessible in Python.  
-- **Mouse Driver Errors:** Verify `ghub_mouse.dll` is in `mouse_driver` and compatible with your system.  
-- **Screen Capture Problems:** Check that `mss` is functioning properly and that the capture region is correctly defined.
+- **"Failed to initialize TensorRT engine"**: Ensure your TensorRT engine file is valid and compatible with your GPU/TensorRT version
+- **"Mouse controller not initialized properly"**: Check if required DLL files are present; fallback stub will be used if missing
+- **Low FPS**: Try reducing resolution in config or upgrade your GPU
+- **Missing dependencies**: The app will print a clear error and exit if a required package is missing
+
+Check the console output for logs. Use `--log-level DEBUG` for more detailed logs.
 
 ---
 
 ## Contributing
 
-Contributions are welcome! Feel free to open an issue or submit a pull request for enhancements or bug fixes.
-
----
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-This project is licensed under the **MIT License**. See the `LICENSE` file for details.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
----
+## Acknowledgements
 
-## Support & Donations
-
-If you would like to support this project, you can donate **USDT Tron (TRC20)** to:
-```
-TDiVQzShforoR5XgWXfKuPhPhdgPypXAgB
-```
-
-For questions or support, contact **support@gamerfun.club**.
+- TensorRT for high-speed inference
+- OpenCV for image processing
+- All contributors to the open-source ecosystem
