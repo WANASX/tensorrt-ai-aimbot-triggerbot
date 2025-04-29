@@ -145,7 +145,3 @@
 
 ---
 
-## Credits
-
-- Major refactor and modernization by [Your Name/Team].
-- Original code by [Original Author]. 

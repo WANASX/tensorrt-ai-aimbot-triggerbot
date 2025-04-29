@@ -145,3 +145,12 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - TensorRT for high-speed inference
 - OpenCV for image processing
 - All contributors to the open-source ecosystem
+
+## Support & Donations
+
+If you would like to support this project, you can donate **USDT Tron (TRC20)** to:
+```
+TDiVQzShforoR5XgWXfKuPhPhdgPypXAgB
+```
+
+For questions or support, contact **support@gamerfun.club**.
