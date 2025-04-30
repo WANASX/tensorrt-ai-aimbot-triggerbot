@@ -132,20 +132,6 @@ Check the console output for logs. Use `--log-level DEBUG` for more detailed log
 
 ---
 
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgements
-
-- TensorRT for high-speed inference
-- OpenCV for image processing
-- All contributors to the open-source ecosystem
-
 ## Support & Donations
 
 If you would like to support this project, you can donate **USDT Tron (TRC20)** to:
